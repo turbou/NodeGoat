@@ -1,10 +1,12 @@
-FROM node:4.4
+FROM node:8
 ENV WORKDIR /usr/src/app/
 WORKDIR $WORKDIR
 COPY package*.json $WORKDIR
 RUN npm install --production --no-cache
+COPY node-contrast-2.9.1.tgz $WORKDIR
+RUN npm install node-contrast-2.9.1.tgz --no-save
 
-FROM node:4-alpine
+FROM node:8-alpine
 ENV USER node
 ENV WORKDIR /home/$USER/app
 WORKDIR $WORKDIR

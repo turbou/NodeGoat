@@ -26,6 +26,7 @@
     "//": "a9 insecure components"
   },
   "scripts": {
+    "contrast": "node-contrast server.js",
     "start": "node server.js",
     "test:e2e": "NODE_ENV=test cypress open",
     "test:ci": "NODE_ENV=test cypress run",
